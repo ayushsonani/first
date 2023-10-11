@@ -124,8 +124,8 @@ class _HiveDataBaseState extends State<HiveDataBase>{
                    Navigator.pop(context);
                    print(box);
 
-                   print(box.values.length);
-                   print(box.getAt(2)!.name);
+                   // print(box.values.length);
+                   // print(box.getAt(2)!.name);
                    data.save();
                    setState(() {
 
