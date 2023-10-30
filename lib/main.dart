@@ -49,11 +49,11 @@ class _HiveDataBaseState extends State<HiveDataBase>{
               showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog(
+                  return AlertDialog(// elevation: 250,
                     title: Text(" add data in hive data base "),
-                    content: Container(
-                      width: MediaQuery.of(context).size.width/10,
-                      height: MediaQuery.of(context).size.height/8,
+                    content: SizedBox(
+                      width: 250,
+                      height: 200,
                       child: ListView(
                         children: [
                           TextField(
@@ -61,6 +61,7 @@ class _HiveDataBaseState extends State<HiveDataBase>{
                             decoration: InputDecoration(hintText: " enter a name "),
                           ),
                           TextField(
+                            keyboardType: TextInputType.number,
                             controller: numbercontroller,
                             decoration: InputDecoration(hintText: " enter a number "),
                           )
@@ -106,17 +107,23 @@ class _HiveDataBaseState extends State<HiveDataBase>{
             builder: (context) {
               return AlertDialog(
                 title: Text(" add data in hive data base "),
-                content: ListView(
-                  children: [
-                    TextField(
-                      controller: namecontroller,
-                      decoration: InputDecoration(hintText: " enter a name "),
-                    ),
-                    TextField(
-                      controller: numbercontroller,
-                      decoration: InputDecoration(hintText: " enter a number "),
-                    )
-                  ],
+                content: SizedBox(
+                  height: MediaQuery.of(context).size.height/8,
+                  // width: MediaQuery.of(context).size.width/,
+
+                  child: ListView(
+                    children: [
+                      TextField(
+                        controller: namecontroller,
+                        decoration: InputDecoration(hintText: " enter a name "),
+                      ),
+                      TextField(
+                        keyboardType: TextInputType.number,
+                        controller: numbercontroller,
+                        decoration: InputDecoration(hintText: " enter a number "),
+                      )
+                    ],
+                  ),
                 ),
                 actions: [
                   TextButton(onPressed: () {
