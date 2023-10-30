@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:hive/hive.dart';
 import 'package:hivedatabase/hoveclass/contect_classs.dart';
 import 'package:path_provider/path_provider.dart';
@@ -40,6 +41,9 @@ class _HiveDataBaseState extends State<HiveDataBase>{
       body: ListView.builder(itemCount: box.length,itemBuilder: (context, index) {
         return ListTile(title: Text("${box.getAt(index).name}"),trailing:Wrap(
           children: [
+            IconButton(onPressed: () {
+              FlutterPhoneDirectCaller.callNumber("+91${box.getAt(index).number}");
+            }, icon: Icon(Icons.call)),
             IconButton(onPressed: () {
 
               showDialog(
